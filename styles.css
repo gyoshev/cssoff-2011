@@ -1,0 +1,33 @@
+html, body, ul {
+	margin: 0;
+	padding: 0;
+}
+
+body, a {
+	color: #fff;
+}
+
+ul {
+	list-style: none;
+}
+
+body {
+	background: #80c1d6 url('texture.png');
+	font: normal 100% verdana, sans-serif;
+}
+
+nav {
+	background: rgba(15,40,48,.05);
+	text-align: center;
+}
+
+nav li, nav a {
+	display: inline-block;
+}
+
+nav a {
+	text-decoration: none;
+	text-transform: uppercase;
+	line-height: 2em;
+	padding: 0 1.625em;
+}
