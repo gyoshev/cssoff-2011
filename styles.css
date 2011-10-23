@@ -1,4 +1,27 @@
-html, body, ul {
+@font-face {
+    font-family: 'KomikaTitle-PaintRegular';
+    src: url('fonts/komikatitle-paint-webfont.eot');
+    src: url('fonts/komikatitle-paint-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/komikatitle-paint-webfont.woff') format('woff'),
+         url('fonts/komikatitle-paint-webfont.ttf') format('truetype'),
+         url('fonts/komikatitle-paint-webfont.svg#KomikaTitle-PaintRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansSemibold';
+    src: url('fonts/OpenSans-Semibold-webfont.eot');
+    src: url('fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html, body, ul, h2 {
 	margin: 0;
 	padding: 0;
 }
@@ -7,18 +30,43 @@ body, a {
 	color: #fff;
 }
 
+h1, h2 {
+	font-family: 'KomikaTitle-PaintRegular', sans-serif;
+}
+
+h1 {
+	color: #fe6537;
+	text-shadow: 3px 3px 0 #fff;
+	font-size: 3.25em;
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 2.5em;
+}
+
 ul {
 	list-style: none;
 }
 
+img {
+	max-width: 100%;
+}
+
+html {
+	background: #80c1d6 url('splash.png') no-repeat 50% 0 ;
+}
+
 body {
-	background: #80c1d6 url('texture.png');
+	background: url('texture-blue.png');
 	font: normal 100% verdana, sans-serif;
 }
 
 nav {
 	background: rgba(15,40,48,.05);
 	text-align: center;
+	position: fixed;
+	width: 100%;
 }
 
 nav li, nav a {
@@ -30,4 +78,35 @@ nav a {
 	text-transform: uppercase;
 	line-height: 2em;
 	padding: 0 1.625em;
+}
+
+.content {
+	width: 58.75em;
+	padding: 0 0.625em;
+	margin: 0 auto;
+}
+
+header {
+	text-align: center;
+	padding: 4.5em 0 0;
+}
+
+#obstacles {
+	background: #fe6638 url('texture-orange.png');
+}
+
+#obstacles h2 {
+	text-shadow: 5px 5px 0 #cb522d;
+}
+
+#prizes {
+	background: #80b238 url('texture-green.png');
+}
+
+#prizes h2 {
+	text-shadow: 5px 5px 0 #668e2d;
+}
+
+footer {
+	text-align: center;
 }
