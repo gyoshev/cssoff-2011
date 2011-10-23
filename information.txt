@@ -1,0 +1,10 @@
+Complete the following:
+
+Name: Alexander Gyoshev
+Email Address: alex@gyoshev.net
+Address: Mladost 1, bl. 17, ent. 3, app. 60
+         Sofia, Bulgaria
+
+Twitter (optional): alex_gyoshev
+
+Do not put any identifying information in your code!
