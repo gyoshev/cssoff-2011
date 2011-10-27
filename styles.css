@@ -30,7 +30,7 @@ body, a {
 	color: #fff;
 }
 
-h1, h2, input, select {
+h1, h2, h3, input, select {
 	font-family: 'KomikaTitle-PaintRegular', sans-serif;
 }
 
@@ -59,15 +59,16 @@ img {
 hr {
 	background: #17343d;
 	height: 0.4375em;
+	border: 0;
 	opacity: .1;
 }
 
 html {
-	background: #80c1d6 url('splash.png') no-repeat 50% 0 ;
+	background: #80c1d6 url('texture-blue.jpg');
 }
 
 body {
-	background: url('texture-blue.png');
+	background: url('splash.png') no-repeat 50% 0;
 	font: normal 100% 'OpenSansSemibold', Verdana, sans-serif;
 }
 
@@ -106,15 +107,31 @@ header div {
 
 #obstacles,
 input, select {
-	background: #fe6638 url('texture-orange.png');
+	background: #fe6638 url('texture-orange.jpg');
 }
 
 #obstacles h2 {
 	text-shadow: 5px 5px 0 #cb522d;
 }
 
+#obstacles ul {
+	width: 480px;
+}
+
+#obstacles li {
+	background: #80b238 url('texture-green.jpg');
+	border-radius: 6px;
+	display: inline-block;
+	width: 220px;
+	height: 220px;
+	vertical-align: top;
+	text-align: center;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
 #prizes {
-	background: #80b238 url('texture-green.png');
+	background: #80b238 url('texture-green.jpg');
 }
 
 #prizes h2 {
@@ -163,8 +180,20 @@ footer .left-column, footer .right-column {
 	padding-left: 0.7857142857142857em;
 }
 
+footer {
+	padding-bottom: 1.5em; /* 24 */
+}
+
 footer a {
 	text-decoration: none;
+}
+
+#license {
+	margin: 39px 0 19px;
+}
+
+#license + p {
+	padding-bottom: 20px;
 }
 
 footer a:hover {
