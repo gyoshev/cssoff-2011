@@ -30,7 +30,10 @@ body, a {
 	color: #fff;
 }
 
-h1, h2, ul span, input, select {
+h1, h2, h3, h4,
+input, select,
+#obstacles /* ? */
+{
 	font-family: 'KomikaTitle-PaintRegular', sans-serif;
 }
 
@@ -41,11 +44,16 @@ h1 {
 }
 
 section {
-	overflow: hidden;	
+	overflow: hidden;
 }
 
-h2 {
+h2, #obstacles h3 {
 	font-size: 2.5em;
+	text-shadow: 5px 5px 0 rgba(0,0,0,.2);
+}
+
+h4 {
+	text-shadow: 5px 5px 0 rgba(0,0,0,.2);
 }
 
 h2:after {
@@ -128,8 +136,7 @@ input, select {
 }
 
 #obstacles h2 {
-	padding-top: 50px;
-	text-shadow: 5px 5px 0 #cb522d;
+	padding: 50px 0 59px;
 }
 
 #obstacles h2:after {
@@ -137,11 +144,13 @@ input, select {
 }
 
 #obstacles ul {
+	float: left;
 	width: 480px;
 }
 
 #obstacles li {
 	background: #80b238 url('texture-green.jpg');
+	color: #fff;
 	border-radius: 6px;
 	display: inline-block;
 	width: 220px;
@@ -152,13 +161,45 @@ input, select {
 	margin-bottom: 20px;
 }
 
+#obstacles .selected {
+	background: #eef13f url('texture-yellow.jpg');
+	color: #f46034;
+}
+
+#selected-info {
+	width: 460px;
+	text-align: center;
+	float: left;
+}
+
+#obstacles h3,
+#obstacles h4 {
+	line-height: 1em;
+	margin: 0;
+	padding: 0;
+	/* 7.5 deg */
+	-webkit-transform: rotate(-7.5deg);
+	-moz-transform: rotate(-7.5deg);
+	-ms-transform: rotate(-7.5deg);
+	-o-transform: rotate(-7.5deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-7); /* TODO: check this */
+}
+
+#selected-info h3 {
+	font-size: 40px;
+	padding-top: 70px;
+}
+
+#selected-info h4 {
+	padding-top: 14px;
+}
+
 #prizes {
 	background: #80b238 url('texture-green.jpg');
 }
 
 #prizes h2 {
 	padding-top: 70px;
-	text-shadow: 5px 5px 0 #668e2d;
 }
 
 #prizes h2:after {
@@ -167,7 +208,6 @@ input, select {
 
 #be-a-contestant h2 {
 	padding-top: 73px;
-	text-shadow: 5px 5px 0 #669aab;
 }
 
 #be-a-contestant h2:after {
