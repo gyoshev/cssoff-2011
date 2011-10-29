@@ -16,8 +16,8 @@
         </nav>
 
         <header>
-            <img src="logo.jpg" alt="Triple Dare" />
-            <h1>The Web's Messiest Challenge!</h1>
+            <img id="logo" src="logo.jpg" alt="Triple Dare" />
+            <h1>The Web&apos;s Messiest Challenge!</h1>
             <div>Airing Thursdays on the Knucklelodeon Network&trade;</div>
         </header>
 
@@ -25,31 +25,45 @@
             <div class="content">
                 <h2>Obstacles</h2>
 
-                <ul>
+                <ul class="column">
                     <li>
-                        <img src="obstacles/the_tank.png" alt="The Tank"/>
-                        <span>The Tank</span>
+                        <a href="#">
+                            <img src="obstacles/the_tank.png" alt="The Tank" />
+                            <span>The Tank</span>
+                        </a>
                     </li><li>
-                        <img src="obstacles/sundae_slide.png" alt="Sundae Slide"/>
-                        <span>Sundae Slide</span>
+                        <a href="#">
+                            <img src="obstacles/sundae_slide.png" alt="Sundae Slide" />
+                            <span>Sundae Slide</span>
+                        </a>
                     </li><li>
-                        <img src="obstacles/hamster_wheel.png" alt="Hamster Wheel"/>
-                        <span>Human Hamster Wheel</span>
+                        <a href="#">
+                            <img src="obstacles/hamster_wheel.png" alt="Hamster Wheel" />
+                            <span>Human Hamster Wheel</span>
+                        </a>
                     </li><li class="selected">
-                        <img src="obstacles/down_the_hatch.png" alt="Down the Hatch"/>
-                        <span>Down The Hatch</span>
+                        <a href="#">
+                            <img src="obstacles/down_the_hatch.png" alt="Down the Hatch" />
+                            <span>Down The Hatch</span>
+                        </a>
                     </li><li>
-                        <img src="obstacles/pick_it.png" alt="Pick It!"/>
-                        <span>Pick It!</span>
+                        <a href="#">
+                            <img src="obstacles/pick_it.png" alt="Pick It!" />
+                            <span>Pick It!</span>
+                        </a>
                     </li><li>
-                        <img src="obstacles/the_wringer.png" alt="The Wringer"/>
-                        <span>The Wringer</span>
+                        <a href="#">
+                            <img src="obstacles/the_wringer.png" alt="The Wringer" />
+                            <span>The Wringer</span>
+                        </a>
                     </li>
                 </ul>
 
-                <div id="selected-info">
+                <div class="column">
                     <h3>Down The Hatch</h3>
                     <h4>6ft slide covered in gunk!</h4>
+
+                    <img src="obstacles/down_the_hatch_460.png" alt="Down the Hatch" />
                 </div>
             </div>
         </section>
@@ -57,6 +71,27 @@
         <section id="prizes">
             <div class="content">
                 <h2>Prizes</h2>
+
+                <div class="column">
+                    <figure>
+                        <img src="prizes/space-camp.jpg" alt="Trip to space camp" />
+                        <figcaption>A trip to space camp!</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="prizes/casio-keyboard.jpg" alt="Casio rapman keyboard" />
+                        <figcaption>A casio rapman keyboard!</figcaption>
+                    </figure>
+                </div>
+                <div class="column">
+                    <figure>
+                        <img src="prizes/skateboard.jpg" alt="Nash skateboard" />
+                        <figcaption>A Nash skateboard!</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="prizes/tv-vcr.jpg" alt="TV/VCR combo" />
+                        <figcaption>A 13 inch <abbr title="Television">TV</abbr>/<abbr title="Video-Cassete Recorder">VCR</abbr> combo!</figcaption>
+                    </figure>
+                </div>
             </div>
         </section>
 
@@ -109,18 +144,18 @@
 
                 <h3>Visit Our Studios</h3>
 
-                <div class="left-column adr">
-                    <div class="street-address">11 Slime Time Way</div>
-                    <span class="locality">Sacrameno</span>,
-                    <span class="region">CA</span>
-                    <span class="postal-code">94203</span>
+                <div class="left-column adr" itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+                    <div itemprop="street-address">11 Slime Time Way</div>
+                    <span itemprop="locality">Sacrameno</span>,
+                    <span itemprop="region">CA</span>
+                    <span itemprop="postal-code">94203</span>
                 </div>
 
-                <div class="right-column adr">
-                    <div class="street-address">329 Gunk Road</div>
-                    <span class="locality">Jacksonville</span>,
-                    <span class="region">FL</span>
-                    <span class="postal-code">32099</span>
+                <div class="right-column adr" itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+                    <div itemprop="street-address">329 Gunk Road</div>
+                    <span itemprop="locality">Jacksonville</span>,
+                    <span itemprop="region">FL</span>
+                    <span itemprop="postal-code">32099</span>
                 </div>
 
                 <hr id="license" />
@@ -130,5 +165,11 @@
                 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img src="creative-commons.png" alt="Creative Commons License" /></a>
             </div>
         </footer>
+
+        <script>
+            function $(id) {
+                return document.getElementById(id);
+            }
+        </script>
     </body>
 </html>
