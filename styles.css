@@ -33,7 +33,8 @@ body, a {
 h1, h2,
 input, select,
 #obstacles /* ? */,
-figcaption
+figcaption,
+#call-to-action
 {
     text-transform: uppercase;
     font-family: 'KomikaTitle-PaintRegular', sans-serif;
@@ -57,10 +58,12 @@ section {
 
 h2, #obstacles h3 {
     font-size: 2.5em;
-    text-shadow: 5px 5px 0 rgba(0,0,0,.2);
 }
 
-h4 {
+h2,
+#obstacles h3,
+h4,
+#call-to-action {
     text-shadow: 5px 5px 0 rgba(0,0,0,.2);
 }
 
@@ -251,12 +254,16 @@ figure {
 }
 
 #be-a-contestant h2 {
-    padding-top: 72px;
+    padding: 72px 0 76px;
 }
 
 #be-a-contestant h2:after {
     margin-left: 420px;
     background-position: 20px 50%;
+}
+
+#be-a-contestant div.column {
+    text-align: center;
 }
 
 fieldset {
@@ -276,6 +283,33 @@ input, select {
 input {
     width: 23.75em;
     display: block;
+}
+
+button {
+    background: transparent url() no-repeat 50% 50%;
+}
+
+#clock {
+    background: transparent url('clock.jpg') no-repeat 50% 50%;
+    width: 390px;
+    height: 330px;
+    font-size: 140px;
+    color: #f5eb00;
+    line-height: 330px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#clock .remaining {
+    text-indent: -999em;
+    display: block;
+}
+
+#call-to-action {
+    width: 260px;
+    font-size: 40px;
+    line-height: 50.6px;
+    display: inline-block;
 }
 
 footer {
