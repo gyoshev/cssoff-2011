@@ -1,0 +1,11 @@
+- legacy browser compatibility (ie6/7)
+- optimize obstacle images
+- compact labels
+- pimp up interactions
+    - animated clock
+    - animated obstacle transitions
+- responsive implementation
+  - flexible grid
+  - flexible images
+  - media queries
+- favicon
