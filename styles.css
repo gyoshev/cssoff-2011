@@ -35,6 +35,7 @@ input, select,
 #obstacles /* ? */,
 figcaption
 {
+    text-transform: uppercase;
     font-family: 'KomikaTitle-PaintRegular', sans-serif;
 }
 
