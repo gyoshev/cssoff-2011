@@ -36,7 +36,7 @@
                         <a href="#">
                             <img src="obstacles/sundae_slide.png" alt="Sundae Slide" />
                             <span>Sundae Slide</span>
-                            <span class="description">finale with cherry on top!</span>
+                            <span class="description">a tasty finale!</span>
                         </a>
                     </li><li>
                         <a href="#">
@@ -105,29 +105,32 @@
 
                 <form action="#" method="post" class="column">
                     <fieldset>
-                        <input type="text" name="name" placeholder="Your name" />
+                        <label for="name">Name</label>
+                        <input id="name" name="name" placeholder="Your name" />
 
-                        <input type="email" name="email" placeholder="Email address" />
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Email address" />
 
-                        <input type="text" name="team" placeholder="Team name" />
+                        <label for="team-name">Team name</label>
+                        <input id="team-name" name="team-name" placeholder="Team name" />
 
-                        <select name="color">
-                            <option>team color</option>
+                        <label for="team-color">Team color</label>
+                        <select id="team-color" name="team-color">
                             <option>red</option>
                             <option>green</option>
                             <option>blue</option>
                         </select>
 
-                        <select name="gender">
-                            <option>gender</option>
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender">
                             <option>male</option>
                             <option>female</option>
-                            <option>not decided yet</option>
                         </select>
 
-                        <input type="url" name="avatar" placeholder="Profile photo URL" />
+                        <label for="avatar-url">Profile photo URL</label>
+                        <input type="url" id="avatar-url" name="avatar-url" placeholder="Profile photo URL" />
 
-                        <button type="submit">Submit entry!</button>
+                        <button type="submit"><span>Submit entry!</span></button>
                     </fieldset>
                 </form>
 
@@ -141,8 +144,9 @@
 
         <footer>
             <div class="content">
-
                 <hr />
+                <img src="kn-logo.png" id="kn-logo" alt="Knucklelodeon Network logo" />
+
                 <h3>The Knucklelodeon Network</h3>
 
                 <p class="left-column">The Knucklelodeon Network is not affiliated with Nickelodeon, nor is it an actual television network</p>
@@ -152,14 +156,14 @@
 
                 <h3>Visit Our Studios</h3>
 
-                <div class="left-column adr" itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+                <div class="left-column adr" itemscope itemtype="http://data-vocabulary.org/Address">
                     <div itemprop="street-address">11 Slime Time Way</div>
                     <span itemprop="locality">Sacrameno</span>,
                     <span itemprop="region">CA</span>
                     <span itemprop="postal-code">94203</span>
                 </div>
 
-                <div class="right-column adr" itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+                <div class="right-column adr" itemscope itemtype="http://data-vocabulary.org/Address">
                     <div itemprop="street-address">329 Gunk Road</div>
                     <span itemprop="locality">Jacksonville</span>,
                     <span itemprop="region">FL</span>
