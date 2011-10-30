@@ -27,7 +27,7 @@
     $.onclick = function(elements, handler) {
         var handlerProxy = function(e) {
             e = e || window.event;
-            e.target = e.target || e.srcElement;
+            if (!e.target) e.target = e.srcElement;
             return handler(e);
         };
 
