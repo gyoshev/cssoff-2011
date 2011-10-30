@@ -100,6 +100,14 @@
             }, 1000);
         },
         initSelectBoxes: function() {
+            function onChangeHandler(e) {
+                var select = e.target || e.srcElement,
+                    wrap = select.parentNode;
+
+                wrap.removeChild(select.nextSibling);
+                wrap.insertBefore(document.createTextNode(select.value), wrap.lastChild);
+            }
+
             $.each($.get("select"), function() {
                 var wrap = $.create("div.select");
                 this.parentNode.insertBefore(wrap, this);
@@ -111,6 +119,9 @@
                 wrap.appendChild(this);
                 wrap.appendChild(document.createTextNode(this.value));
                 wrap.appendChild($.create("span.arrow"));
+
+                this.onchange = onChangeHandler;
+                this.onkeyup = onChangeHandler;
             });
         }
     };
