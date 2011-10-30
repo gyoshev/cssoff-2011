@@ -1,59 +1,87 @@
-$dom.closest = function(element, selector) {
-    return $dom.is(element, selector) ? element : $dom.ancestor(element,selector);
-};
-
-$dom.siblings = function(element) {
-    var result = [],
-        currentElement = element.parentNode.lastChild;
-
-    while (currentElement) {
-        if (currentElement.nodeType == 1 && currentElement != element) {
-            result.push(currentElement);
-        }
-
-        currentElement = currentElement.previousSibling;
-    }
-
-    return result.reverse();
-};
-
-$dom.onclick = function(elements, handler) {
-    var handlerProxy = function(e) {
-        e = e || window.event;
-        e.target = e.target || e.srcElement;
-        return handler(e);
+(function($) {
+    $.closest = function(element, selector) {
+        return $dom.is(element, selector) ? element : $dom.ancestor(element,selector);
     };
 
-    for (var i = 0, len = elements.length; i < len; i++) {
-        elements[i].onclick = handlerProxy;
-    }
-};
+    $.siblings = function(element) {
+        var result = [],
+            currentElement = element.parentNode.lastChild;
 
-$dom.onready(function() {
-    var obstacles = $dom.get("#obstacles a");
+        while (currentElement) {
+            if (currentElement.nodeType == 1 && currentElement != element) {
+                result.push(currentElement);
+            }
 
-    $dom.onclick(obstacles, function(e) {
-        e.preventDefault();
-
-        var container = $dom.closest(e.target, "a"),
-            img = $dom.descendants(container, "img");
-
-        // change container styles
-        var siblings = $dom.siblings(container.parentNode)
-        for (var i = 0; i< siblings.length; i++) {
-            $dom.removeClass(siblings[i], "selected");
+            currentElement = currentElement.previousSibling;
         }
-        $dom.addClass(container.parentNode, "selected");
 
-        var info = $dom.get("#obstacles div.column")[0];
+        return result.reverse();
+    };
 
-        // change image
-        $dom.descendants(info, "img")[0].src = img[0].src.replace(/\.png$/i, "_460.png");
+    $.onclick = function(elements, handler) {
+        var handlerProxy = function(e) {
+            e = e || window.event;
+            e.target = e.target || e.srcElement;
+            return handler(e);
+        };
 
-        // change text
-        $dom.descendants(info, "h3")[0].innerHTML = img[0].alt;
-        $dom.descendants(info, "h4")[0].innerHTML = $dom.descendants(container, ".description")[0].innerHTML;
+        for (var i = 0, len = elements.length; i < len; i++) {
+            elements[i].onclick = handlerProxy;
+        }
+    };
 
-        return false;
+    $.onready(function() {
+        // obstacles
+        var obstacles = $.get("#obstacles a");
+
+        $.onclick(obstacles, function(e) {
+            e.preventDefault();
+
+            var descendants = $.descendants,
+                container = $.closest(e.target, "a"),
+                img = $.descendants(container, "img");
+
+            // change container styles
+            var siblings = $.siblings(container.parentNode)
+            for (var i = 0; i < siblings.length; i++) {
+                $.removeClass(siblings[i], "selected");
+            }
+
+            $.addClass(container.parentNode, "selected");
+
+            var info = $.get("#obstacles div.column")[0];
+
+            // change image
+            descendants(info, "img")[0].src = img[0].src.replace(/\.png$/i, "_460.png");
+
+            // change text
+            descendants(info, "h3")[0].innerHTML = img[0].alt;
+            descendants(info, "h4")[0].innerHTML = descendants(container, ".description")[0].innerHTML;
+
+            return false;
+        });
+
+        // clock
+        var clock = $.get("#clock")[0];
+
+        function pad(i) {
+            return i < 10 ? "0" + i : i;
+        }
+
+        var secondsInterval = setInterval(function() {
+            var secondsNode = clock.firstChild,
+                secondsRemaining = +secondsNode.nodeValue - 1;
+
+            if (secondsRemaining == 0) {
+                clearInterval(secondsInterval);
+
+                // enable blinking
+                setInterval(function() {
+                    secondsNode.nodeValue = secondsNode.nodeValue == "00" ? "" : "00";
+                }, 500);
+            }
+
+            secondsNode.nodeValue = pad(secondsRemaining);
+        }, 1000);
     });
-});
+})($dom);

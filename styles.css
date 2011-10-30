@@ -20,6 +20,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'DigitaldreamFatRegular';
+    src: url('fonts/digitaldreamfat-webfont.eot');
+    src: url('fonts/digitaldreamfat-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/digitaldreamfat-webfont.woff') format('woff'),
+         url('fonts/digitaldreamfat-webfont.ttf') format('truetype'),
+         url('fonts/digitaldreamfat-webfont.svg#DigitaldreamFatRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body, ul, ol, hr, h1, h2, h3, p, form, fieldset {
     margin: 0;
     padding: 0;
@@ -33,7 +44,7 @@ body, a {
 h1, h2,
 input, select,
 #obstacles /* ? */,
-figcaption,
+.description,
 #call-to-action
 {
     text-transform: uppercase;
@@ -237,6 +248,7 @@ input, select {
 
 #prizes {
     background: #80b238 url('texture-green.jpg');
+    padding-bottom: 120px;
 }
 
 #prizes h2 {
@@ -247,10 +259,16 @@ input, select {
     margin-left: 180px;
 }
 
-figure {
+#prizes li {
     margin: 0;
+    float: none;
     display: inline-block;
     vertical-align: top;
+}
+
+#prizes .last-row {
+    vertical-align: bottom;
+    margin-top: -95px;
 }
 
 #be-a-contestant h2 {
@@ -286,18 +304,23 @@ input {
 }
 
 button {
-    background: transparent url() no-repeat 50% 50%;
+    border: 0;
+    background: transparent url('splash_green.png') no-repeat 50% 50%;
 }
 
 #clock {
     background: transparent url('clock.jpg') no-repeat 50% 50%;
     width: 390px;
+    text-indent: 10px;
     height: 330px;
-    font-size: 140px;
     color: #f5eb00;
-    line-height: 330px;
     overflow: hidden;
     display: inline-block;
+    font-size: 140px;
+    line-height: 330px;
+    font-family: 'DigitaldreamFatRegular', Courier, monospace;
+    text-shadow: 6px 10px 0 #000;
+    margin-bottom: 40px;
 }
 
 #clock .remaining {
@@ -310,6 +333,7 @@ button {
     font-size: 40px;
     line-height: 50.6px;
     display: inline-block;
+    letter-spacing: 1.6px;
 }
 
 footer {
