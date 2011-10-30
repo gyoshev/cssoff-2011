@@ -2,6 +2,7 @@
 - optimize obstacle images
 - compact labels
 - pimp up interactions
+    - animate navigation to sections
     - animated clock
     - animated obstacle transitions
 - responsive implementation
