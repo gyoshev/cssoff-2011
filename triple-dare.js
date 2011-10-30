@@ -1,3 +1,7 @@
+$dom.closest = function(element, selector) {
+    return $dom.is(element, selector) ? element : $dom.ancestor(element,selector);
+};
+
 $dom.siblings = function(element) {
     var result = [],
         currentElement = element.parentNode.lastChild;
@@ -31,16 +35,24 @@ $dom.onready(function() {
     $dom.onclick(obstacles, function(e) {
         e.preventDefault();
 
-        var container = $dom.ancestor(e.target, "a"),
+        var container = $dom.closest(e.target, "a"),
             img = $dom.descendants(container, "img");
 
-        // change container
-        console.log($dom.siblings(container.parentNode));
+        // change container styles
+        var siblings = $dom.siblings(container.parentNode)
+        for (var i = 0; i< siblings.length; i++) {
+            $dom.removeClass(siblings[i], "selected");
+        }
         $dom.addClass(container.parentNode, "selected");
-        $dom.removeClass($dom.siblings(container.parentNode), "selected");
+
+        var info = $dom.get("#obstacles div.column")[0];
 
         // change image
-        $dom.get("#obstacles div.column img")[0].src = img[0].src.replace(/\.png$/i, "_460.png");
+        $dom.descendants(info, "img")[0].src = img[0].src.replace(/\.png$/i, "_460.png");
+
+        // change text
+        $dom.descendants(info, "h3")[0].innerHTML = img[0].alt;
+        $dom.descendants(info, "h4")[0].innerHTML = $dom.descendants(container, ".description")[0].innerHTML;
 
         return false;
     });

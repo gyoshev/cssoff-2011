@@ -192,6 +192,10 @@ input, select {
     display: block;
 }
 
+#obstacles a .description {
+    display: none;
+}
+
 #obstacles .selected {
     background: #eef13f url('texture-yellow.jpg');
 }
