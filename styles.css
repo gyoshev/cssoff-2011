@@ -69,6 +69,7 @@ h1 {
 
 section {
     overflow: hidden;
+    position: relative;
 }
 
 h2, #obstacles h3 {
@@ -83,10 +84,15 @@ button,
     text-shadow: 0.125em 0.125em 0 rgba(0,0,0,.2);
 }
 
+h2 {
+    letter-spacing: 1px;
+    text-indent: 3px;
+}
+
 h2:after {
     background: transparent url('images/rally.gif') repeat-x 0 50%;
     display: block;
-    margin-top: -50px;
+    margin-top: -52px;
     height: 40px;
     content: "";
 }
@@ -107,9 +113,30 @@ img {
 
 hr {
     background: #17343d;
-    height: 0.4375em;
+    height: 7px;
     border: 0;
     opacity: .1;
+    filter: alpha(opacity=10);
+}
+
+section:before,
+section:after {
+    content: "";
+    display: block;
+    height: 7px;
+    width: 100%;
+    background: #000;
+    opacity: .08;
+    filter: alpha(opacity=8);
+    position: absolute;
+}
+
+section:before {
+    top: 0;
+}
+
+section:after {
+    bottom: 0;
 }
 
 html {
@@ -122,6 +149,7 @@ body {
 }
 
 nav {
+    background: url('images/dither.gif') repeat 50% 0;
     background: rgba(15,40,48,.05);
     text-align: center;
     position: fixed;
@@ -141,7 +169,8 @@ nav a {
 }
 
 nav a:hover {
-    background-color: rgba(0,0,0,.1);
+    background: url('images/dither.gif') repeat 50% 0;
+    background: rgba(0,0,0,.1);
 }
 
 .content {
@@ -175,7 +204,7 @@ input, select, .select {
 }
 
 #obstacles h2 {
-    padding: 50px 0 59px;
+    padding: 33px 0 59px;
 }
 
 #obstacles h2:after {
@@ -235,12 +264,11 @@ button span {
     line-height: 1em;
     margin: 0;
     padding: 0;
-    /* 7.5 deg */
+
     -webkit-transform: rotate(-7.5deg);
     -moz-transform: rotate(-7.5deg);
     -ms-transform: rotate(-7.5deg);
     -o-transform: rotate(-7.5deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-7); /* TODO: check if this works */
 }
 
 #obstacles h3 {
@@ -348,6 +376,7 @@ input, select, .select {
 
 .select select {
     opacity: 0;
+    filter: alpha(opacity=0);
     position: absolute;
     top: 0;
     left: 0;
@@ -377,12 +406,12 @@ input {
 }
 
 #team-color {
-    width: 220px;
+    width: 215px;
     margin-right: 18px;
 }
 
 #gender {
-    width: 140px;
+    width: 135px;
 }
 
 button {
@@ -422,6 +451,10 @@ button {
     line-height: 50.6px;
     display: inline-block;
     letter-spacing: 1.6px;
+}
+
+#be-a-contestant:after {
+    display: none;
 }
 
 footer {

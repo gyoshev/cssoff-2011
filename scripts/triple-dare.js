@@ -28,6 +28,7 @@
         var handlerProxy = function(e) {
             e = e || window.event;
             if (!e.target) e.target = e.srcElement;
+            if (!e.preventDefault) e.preventDefault = function() { e.cancelBubble = true; };
             return handler(e);
         };
 
@@ -160,6 +161,10 @@
 
                 this.onchange = onChangeHandler;
                 this.onkeyup = onChangeHandler;
+            });
+        },
+        initScrollableNavigation: function() {
+            $.onclick($.get("nav a"), function(e) {
             });
         },
         initFitText: function() {

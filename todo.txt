@@ -13,5 +13,5 @@ X optimize obstacle images (400x460 jpeg 60% with orange texture background)
 - favicon
 - fix fonts in chrome
 - consider changing text to normally capitalized
-
+- move small images to sprite
 
