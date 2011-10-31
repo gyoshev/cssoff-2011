@@ -84,7 +84,7 @@ button,
 }
 
 h2:after {
-    background: transparent url('rally.gif') repeat-x 0 50%;
+    background: transparent url('images/rally.gif') repeat-x 0 50%;
     display: block;
     margin-top: -50px;
     height: 40px;
@@ -113,11 +113,11 @@ hr {
 }
 
 html {
-    background: #80c1d6 url('texture-blue.jpg');
+    background: #80c1d6 url('images/texture-blue.jpg');
 }
 
 body {
-    background: url('splash.png') no-repeat 50% 0;
+    background: url('images/splash.png') no-repeat 50% 0;
     font: normal 100% 'OpenSansSemibold', Verdana, sans-serif;
 }
 
@@ -167,7 +167,7 @@ header .airing {
 
 #obstacles,
 input, select, .select {
-    background: #fe6638 url('texture-orange.jpg');
+    background: #fe6638 url('images/texture-orange.jpg');
 }
 
 #obstacles {
@@ -183,7 +183,7 @@ input, select, .select {
 }
 
 #obstacles li {
-    background: #80b238 url('texture-green.jpg');
+    background: #80b238 url('images/texture-green.jpg');
     -moz-border-radius: 6px;
     border-radius: 6px;
     display: inline-block;
@@ -215,7 +215,7 @@ input, select, .select {
 }
 
 #obstacles .selected {
-    background: #eef13f url('texture-yellow.jpg');
+    background: #eef13f url('images/texture-yellow.jpg');
 }
 
 #obstacles .selected a {
@@ -223,7 +223,7 @@ input, select, .select {
 }
 
 #obstacles div.column {
-    background: transparent url('obstacles-splash.jpg') no-repeat 50% 0;
+    background: transparent url('images/obstacles-splash.jpg') no-repeat 50% 0;
 }
 
 #obstacles h3,
@@ -259,7 +259,7 @@ button span {
     position: absolute;
     left: 46.15%;
     top: 57%;
-    background: transparent url('obstacles/snuff.png') no-repeat 0 0;
+    background: transparent url('images/obstacles/snuff.png') no-repeat 0 0;
     width: 13px;
     height: 23px;
     display: block;
@@ -274,7 +274,7 @@ button span {
 }
 
 #prizes {
-    background: #80b238 url('texture-green.jpg');
+    background: #80b238 url('images/texture-green.jpg');
     padding-bottom: 120px;
 }
 
@@ -352,7 +352,7 @@ input, select, .select {
 }
 
 .select .arrow {
-    background: transparent url('arrow.png') no-repeat 0 0;
+    background: transparent url('images/arrow.png') no-repeat 0 0;
     width: 50px;
     height: 50px;
     position: absolute;
@@ -387,14 +387,14 @@ button {
     margin: 24px 0 0 62px;
     letter-spacing: 1px;
     border: 0;
-    background: transparent url('button-splash.jpg') no-repeat 50% 50%;
+    background: transparent url('images/button-splash.jpg') no-repeat 50% 50%;
     width: 240px;
     height: 155px;
     font-size: 26px;
 }
 
 #clock {
-    background: transparent url('clock.jpg') no-repeat 50% 50%;
+    background: transparent url('images/clock.jpg') no-repeat 50% 50%;
     width: 390px;
     text-indent: 10px;
     height: 330px;
