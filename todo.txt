@@ -1,12 +1,14 @@
+- responsive implementation
+  - flexible grid
+  - flexible images
+  - media queries
 - legacy browser compatibility (ie6/7)
-- optimize obstacle images
+- optimize obstacle images (400x460 jpeg 60% with orange texture background)
 - compact labels
 - pimp up interactions
     - animate navigation to sections
     - animated clock
     - animated obstacle transitions
-- responsive implementation
-  - flexible grid
-  - flexible images
-  - media queries
 - favicon
+
+

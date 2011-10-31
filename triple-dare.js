@@ -36,13 +36,51 @@
         }
     };
 
-    $.getStyle = function getStyle(element, property){
+    $.getStyle = function(element, property) {
+        var view = document.defaultView;
+
         if (element.currentStyle) {
             return element.currentStyle[property];
-        } else if (document.defaultView && document.defaultView.getComputedStyle) {
-            return document.defaultView.getComputedStyle(element, "")[property];
+        } else if (view && view.getComputedStyle) {
+            return view.getComputedStyle(element, "")[property];
         }
-    }
+    };
+
+    // FitText by Dave Rupert, adapted to $dom environment
+    // original: https://github.com/davatron5000/FitText.js/blob/master/jquery.fittext.js
+    $.fitText = function fitText(elements, compressor, options) {
+        var minFontSize = (options && options.minFontSize) || Number.NEGATIVE_INFINITY,
+            maxFontSize = (options && options.minFontSize) || Number.POSITIVE_INFINITY;
+
+        compressor = compressor || 1;
+
+        function resizer() {
+            $.each(elements, function() {
+                this.style.fontSize = Math.max(Math.min(
+                        this.offsetWidth / (compressor*10),
+                        parseFloat(maxFontSize)),
+                        parseFloat(minFontSize)
+                    ) + "px";
+            });
+        }
+
+        resizer();
+
+        if (!fitText.handlers) {
+            fitText.handlers = [];
+        }
+
+        fitText.handlers.push(resizer);
+    };
+
+    window.onresize = function() {
+        var handlers = $.fitText.handlers;
+        if (handlers) {
+            for (var i = 0, len = handlers.length; i < len; i++) {
+                handlers[i]();
+            }
+        }
+    };
 
 
     var TripleDare = {
@@ -123,6 +161,9 @@
                 this.onchange = onChangeHandler;
                 this.onkeyup = onChangeHandler;
             });
+        },
+        initFitText: function() {
+            $.fitText($.get("h1"), 1.807692307692308);
         }
     };
 
@@ -130,5 +171,6 @@
         TripleDare.initObstacles();
         TripleDare.initClock();
         TripleDare.initSelectBoxes();
+        TripleDare.initFitText();
     });
 })($dom);

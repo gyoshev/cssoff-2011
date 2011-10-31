@@ -145,13 +145,13 @@ nav a:hover {
 }
 
 .content {
-    width: 58.75em;
+    max-width: 58.75em;
     padding: 0 0.625em;
     margin: 0 auto;
 }
 
 .column {
-    width: 460px;
+    width: 50%;
     text-align: center;
     float: left;
 }
@@ -161,7 +161,7 @@ header {
     padding: 4.5em 0 4.9375em;
 }
 
-header div {
+header .airing {
     font-size: 1.375em;
 }
 
@@ -182,36 +182,32 @@ input, select, .select {
     margin-left: 280px;
 }
 
-#obstacles ul {
-    float: left;
-    width: 480px;
-}
-
 #obstacles li {
     background: #80b238 url('texture-green.jpg');
     -moz-border-radius: 6px;
     border-radius: 6px;
     display: inline-block;
     position: relative;
-    width: 220px;
-    height: 220px;
+    width: 46.80851063829787%;
+    height: 46.80851063829787%;
+    margin: 0 3.191489361702128% 3.191489361702128% 0;
     vertical-align: top;
     text-align: center;
-    margin-right: 20px;
-    margin-bottom: 20px;
 }
 
 #obstacles a {
     font-size: 0.875em;
     text-decoration: none;
     display: inline-block;
-    width: 100%;
+    padding: 0 10.22727272727273%;
+    width: 79.54545454545455%;
     vertical-align: bottom;
     color: #fff;
 }
 
 #obstacles a span {
     display: block;
+    margin: 0 -10.22727272727273%;
 }
 
 #obstacles a .description {
@@ -246,11 +242,11 @@ button span {
 
 #obstacles h3 {
     font-size: 40px;
-    padding-top: 70px;
+    padding-top: 14.8936170212766%;
 }
 
 #obstacles h4 {
-    padding: 14px 0 110px;
+    padding: 14px 0 23.40425531914894%;
     font-size: 21.18px;
 }
 
