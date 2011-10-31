@@ -207,6 +207,9 @@ input, select, .select {
 
 #obstacles a span {
     display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin: 0 -10.22727272727273%;
 }
 
