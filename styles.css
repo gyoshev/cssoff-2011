@@ -254,6 +254,26 @@ button span {
     font-size: 21.18px;
 }
 
+#obstacles img {
+	position: relative;
+}
+
+#pick_it:before {
+	content: "";
+	position: absolute;
+	left: 100px;
+	top: 120px;
+	background: url('obstacles/snuff.png');
+	width: 13px;
+	height: 23px;
+	display: block;
+}
+
+#pick_it:hover:before{  
+   -moz-transform: translate(0,20px);
+   -moz-transition: all 1s ease-in-out;
+}
+
 #prizes {
     background: #80b238 url('texture-green.jpg');
     padding-bottom: 120px;
