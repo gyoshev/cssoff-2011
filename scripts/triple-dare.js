@@ -83,6 +83,33 @@
         }
     };
 
+    var requestAnimFrame = window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            function(/* function */ callback /*, DOMElement element */){
+                window.setTimeout(function() { callback(); }, 16);
+            };
+
+    $.animate = function(element, property, endValue, interval) {
+        var startValue = element[property],
+            startTime = +new Date(),
+            endTime = startTime + interval;
+
+        requestAnimFrame(function timer(t) {
+            t = t || +new Date();
+
+            if (t > startTime + interval) {
+                element[property] = endValue;
+            } else {
+                element[property] = startValue + (endValue - startValue) / ((startTime + t) / endTime)
+            }
+
+
+            requestAnimFrame(timer);
+        });
+    };
 
     var TripleDare = {
         initObstacles: function() {
@@ -164,11 +191,14 @@
             });
         },
         initScrollableNavigation: function() {
-            $.onclick($.get("nav a"), function(e) {
-            });
+            if ("onhashchange" in window) {
+                window.onhashchange = function() {
+                    $.animate(document.documentElement, "scrollTop", $.get(location.hash)[0].offsetTop, 2600);
+                };
+            }
         },
         initFitText: function() {
-            //$.fitText($.get("h1, .airing"), 1.807692307692308);
+            $.fitText($.get("h1, .airing"), 1.807692307692308);
         }
     };
 
@@ -177,5 +207,6 @@
         TripleDare.initClock();
         TripleDare.initSelectBoxes();
         TripleDare.initFitText();
+        TripleDare.initScrollableNavigation();
     });
 })($dom);
