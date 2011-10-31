@@ -3,9 +3,10 @@
   - flexible images
   - media queries
 - legacy browser compatibility (ie6/7)
-- optimize obstacle images (400x460 jpeg 60% with orange texture background)
+X optimize obstacle images (400x460 jpeg 60% with orange texture background)
 - compact labels
 - pimp up interactions
+    - obstacles hover states
     - animate navigation to sections
     - animated clock
     - animated obstacle transitions

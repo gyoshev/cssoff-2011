@@ -105,7 +105,7 @@
                 var info = $.get("#obstacles div.column")[0];
 
                 // change image
-                descendants(info, "img")[0].src = img[0].src.replace(/\.png$/i, "_460.png");
+                descendants(info, "img")[0].src = img[0].src.replace(/\.png$/i, ".jpg");
 
                 // change text
                 descendants(info, "h3")[0].innerHTML = img[0].alt;
@@ -163,7 +163,7 @@
             });
         },
         initFitText: function() {
-            $.fitText($.get("h1"), 1.807692307692308);
+            //$.fitText($.get("h1"), 1.807692307692308);
         }
     };
 
