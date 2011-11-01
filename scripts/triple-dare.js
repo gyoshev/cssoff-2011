@@ -199,7 +199,8 @@
             }
         },
         initFitText: function() {
-            $.fitText($.get("h1, .airing"), 1.807692307692308);
+            //$.fitText($.get("h1"), 1.807692307692308);
+            //$.fitText($.get(".airing"), 4.272727272727273);
         }
     };
 
