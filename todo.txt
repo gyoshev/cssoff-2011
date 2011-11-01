@@ -2,16 +2,15 @@
   - flexible grid
   - flexible images
   - media queries
-- legacy browser compatibility (ie6/7)
 X optimize obstacle images (400x460 jpeg 60% with orange texture background)
-- compact labels
 - pimp up interactions
     - obstacle hover states
     X animate navigation to sections
     - animate clock
     - animate obstacle transitions
+    - compact labels
 - favicon
-- fix fonts in chrome
-- consider changing text to normally capitalized
+X fix fonts in chrome
+X consider changing text to normally capitalized
+- legacy browser compatibility (ie6/7)
 - move small images to sprite
-
