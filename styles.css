@@ -159,6 +159,8 @@ nav {
 
 nav li, nav a {
     display: inline-block;
+    *display: inline;
+    zoom: 1;
 }
 
 nav a {
@@ -216,6 +218,8 @@ input, select, .select {
     -moz-border-radius: 6px;
     border-radius: 6px;
     display: inline-block;
+    *display: inline;
+    zoom: 1;
     position: relative;
     height: 46.80851063829787%;
     width: 46.80851063829787%;
@@ -228,6 +232,8 @@ input, select, .select {
     font-size: 0.875em;
     text-decoration: none;
     display: inline-block;
+    *display: inline;
+    zoom: 1;
     padding: 0 10.22727272727273%;
     width: 79.54545454545455%;
     vertical-align: bottom;
@@ -297,6 +303,9 @@ button span {
     /* only ff does pseudo transitions, but there is hope */
     -moz-transition: all 1s ease-out;
     -webkit-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    transition: all 1s ease-out;
 }
 
 #pick_it:hover:before{
@@ -320,6 +329,8 @@ button span {
 #prizes li {
     margin: 0;
     display: inline-block;
+    *display: inline;
+    zoom: 1;
     vertical-align: top;
     text-align: center;
     width: 44.68085106382979%;
@@ -433,6 +444,8 @@ button {
     color: #f5eb00;
     overflow: hidden;
     display: inline-block;
+    *display: inline;
+    zoom: 1;
     font-size: 140px;
     line-height: 330px;
     font-family: 'DigitaldreamFatRegular', Courier, monospace;
@@ -450,6 +463,8 @@ button {
     font-size: 40px;
     line-height: 50.6px;
     display: inline-block;
+    *display: inline;
+    zoom: 1;
     letter-spacing: 1.6px;
 }
 
@@ -473,8 +488,10 @@ footer p, footer .adr {
 
 footer .left-column, footer .right-column {
     display: inline-block;
+    *display: inline;
+    zoom: 1;
     width: 21.5em;
-    line-height: 18px;
+    line-height: 1.125em;
 }
 
 h3 {
@@ -493,7 +510,7 @@ h3 {
 }
 
 footer {
-    padding-bottom: 1.5em; /* 24 */
+    padding-bottom: 1.5em;
 }
 
 footer a {
@@ -518,7 +535,7 @@ footer a:hover {
 @media only screen and (min-width: 768px) {
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1401px) {
     .content {
         max-width: 78.75em; /* 1260 */
     }
