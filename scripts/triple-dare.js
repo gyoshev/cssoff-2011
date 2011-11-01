@@ -83,31 +83,28 @@
         }
     };
 
-    var requestAnimFrame = window.requestAnimationFrame ||
-            window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame ||
-            window.oRequestAnimationFrame ||
-            window.msRequestAnimationFrame ||
-            function(/* function */ callback /*, DOMElement element */){
-                window.setTimeout(function() { callback(); }, 16);
-            };
+    // 139bytes requestAnimFrame -- https://gist.github.com/997619
+    var requestAnimationFrame = function(a,b){while(a--&&!(b=this["oR0msR0mozR0webkitR0r".split(0)[a]+"equestAnimationFrame"]));return b||function(a){setTimeout(a,15)}}(5)
+
+    // Robert Penner cubic easeOut easing function
+    function easeOut(t, b, c, d) {
+        return c*((t=t/d-1)*t*t + 1) + b;
+    }
 
     $.animate = function(element, property, endValue, interval) {
         var startValue = element[property],
             startTime = +new Date(),
             endTime = startTime + interval;
 
-        requestAnimFrame(function timer(t) {
+        requestAnimationFrame(function draw(t) {
             t = t || +new Date();
 
             if (t > startTime + interval) {
                 element[property] = endValue;
             } else {
-                element[property] = startValue + (endValue - startValue) / ((startTime + t) / endTime)
+                element[property] = easeOut(t - startTime, startValue, endValue - startValue, interval);
+                requestAnimationFrame(draw);
             }
-
-
-            requestAnimFrame(timer);
         });
     };
 
@@ -191,10 +188,14 @@
             });
         },
         initScrollableNavigation: function() {
-            if ("onhashchange" in window) {
-                window.onhashchange = function() {
-                    $.animate(document.documentElement, "scrollTop", $.get(location.hash)[0].offsetTop, 2600);
-                };
+            if (history.pushState) {
+                $.onclick($.get("nav a"), function(e) {
+                    e.preventDefault();
+                    var hash = e.target.getAttribute("href", 2);
+                    history.pushState({}, window.title, hash);
+                    $.animate(document.body, "scrollTop", $.get(hash)[0].offsetTop, 500);
+                    $.animate(document.documentElement, "scrollTop", $.get(hash)[0].offsetTop, 500);
+                });
             }
         },
         initFitText: function() {
