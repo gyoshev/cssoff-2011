@@ -1,0 +1,92 @@
+.content {
+    width: 68.01736613603473%;
+}
+
+.column {
+    width: 50%;
+    text-align: center;
+    float: left;
+}
+
+#pick_it:before {
+    content: "";
+    position: absolute;
+    left: 46.15%;
+    top: 57%;
+    background: transparent url('images/obstacles/snuff.png') no-repeat 0 0;
+    width: 13px;
+    height: 23px;
+    display: block;
+    /* only ff does pseudo transitions, but there is hope */
+    -moz-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+
+#pick_it:hover:before {
+    -moz-transform: translate(0,20px);
+    -webkit-transform: translate(0,20px);
+}
+
+#obstacles div.column {
+    display: block;
+    background: transparent url('images/obstacles-splash.jpg') no-repeat 50% 0;
+}
+
+#prizes li {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    margin-bottom: 0;
+    width: 44.68085106382979%;
+    padding: 0 2.659574468085106%;
+}
+
+#prizes .last-row {
+    vertical-align: bottom;
+    margin-top: -95px;
+}
+
+#clock {
+    background: transparent url('images/clock.jpg') no-repeat 50% 0;
+    width: 390px;
+    text-indent: 10px;
+    height: 330px;
+    color: #f5eb00;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    font-size: 140px;
+    line-height: 330px;
+    font-family: 'DigitaldreamFatRegular', Courier, monospace;
+    text-shadow: 6px 10px 0 #000;
+    margin-bottom: 40px;
+}
+
+#clock .remaining {
+    text-indent: -999em;
+    display: block;
+}
+
+footer .left-column, footer .right-column {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    width: 31.7%;
+    margin-bottom: 0;
+}
+
+.left-column {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.right-column {
+    text-align: left;
+    padding-left: 0.7857142857142857em;
+    padding-bottom: 27px;
+}
+
