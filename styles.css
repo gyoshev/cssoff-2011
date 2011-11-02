@@ -213,8 +213,6 @@ input, select, .select {
 
 #obstacles li {
     background: #80b238 url('images/texture-green.jpg');
-    -moz-border-radius: 6px;
-    border-radius: 6px;
     display: inline-block;
     *display: inline;
     zoom: 1;
@@ -236,6 +234,27 @@ input, select, .select {
     width: 79.54545454545455%;
     vertical-align: bottom;
     color: #fff;
+	
+	-moz-transition: background .5s ease-out, box-shadow .5s ease-out;
+	-webkit-transition: background .5s ease-out, box-shadow .5s ease-out;
+	-o-transition: background .5s ease-out, box-shadow .5s ease-out;
+	-ms-transition: background .5s ease-out, box-shadow .5s ease-out;
+	transition: background .5s ease-out, box-shadow .5s ease-out;
+}
+
+#obstacles a, #obstacles li {
+   -moz-border-radius: 6px;
+    border-radius: 6px;	
+}
+
+#obstacles a:hover {
+	background-color: rgba(182,255,54,.5);
+	box-shadow: 0 0 .2em #7fb325;
+}
+
+#obstacles .selected a:hover {
+	background-color: transparent;
+	box-shadow: none;
 }
 
 #obstacles a span {
