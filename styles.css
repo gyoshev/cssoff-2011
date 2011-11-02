@@ -83,7 +83,8 @@ h1 {
     font-size: 2em;
     text-shadow: 0.0384615384615385em 0.0576923076923077em 0 #fff;
     letter-spacing: 0.0307692307692308em;
-    padding-bottom: 0.0961538461538462em;
+    padding-bottom: 0.1730769230769231em;
+    margin-top: 0.3461538461538462em;
 
     /* text shadow in IE */
     background-color: #ff1ff1\9;
@@ -198,7 +199,7 @@ nav a:hover {
 
 header {
     text-align: center;
-    padding: 4.5em 0;
+    padding: 4.5em 0 4.663636363636364em;
 }
 
 #obstacles,
@@ -211,11 +212,11 @@ input, select, .select {
 }
 
 #obstacles h2 {
-    padding: .825em 0 1.475em;
+    padding: 1.19047619047619em 0 1.475em;
 }
 
 #obstacles h2:after {
-    margin-left: 280px;
+    margin-left: 281px;
 }
 
 #obstacles li {
@@ -241,27 +242,22 @@ input, select, .select {
     width: 79.54545454545455%;
     vertical-align: bottom;
     color: #fff;
-	
-	-moz-transition: background .5s ease-out, box-shadow .5s ease-out;
-	-webkit-transition: background .5s ease-out, box-shadow .5s ease-out;
-	-o-transition: background .5s ease-out, box-shadow .5s ease-out;
-	-ms-transition: background .5s ease-out, box-shadow .5s ease-out;
-	transition: background .5s ease-out, box-shadow .5s ease-out;
+
+    -moz-transition: background .5s ease-out, box-shadow .5s ease-out;
+    -webkit-transition: background .5s ease-out, box-shadow .5s ease-out;
+    -o-transition: background .5s ease-out, box-shadow .5s ease-out;
+    -ms-transition: background .5s ease-out, box-shadow .5s ease-out;
+    transition: background .5s ease-out, box-shadow .5s ease-out;
 }
 
 #obstacles a, #obstacles li {
    -moz-border-radius: 6px;
-    border-radius: 6px;	
+    border-radius: 6px;
 }
 
 #obstacles a:hover {
-	background-color: rgba(182,255,54,.5);
-	box-shadow: 0 0 .2em #7fb325;
-}
-
-#obstacles .selected a:hover {
-	background-color: transparent;
-	box-shadow: none;
+    background-color: rgba(182,255,54,.5);
+    box-shadow: 0 0 .2em #7fb325;
 }
 
 #obstacles a span {
@@ -269,6 +265,7 @@ input, select, .select {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding: 0.7142857142857143em 0 1em;
     margin: 0 -10.22727272727273%;
 }
 
@@ -317,7 +314,7 @@ button span {
 }
 
 #prizes h2:after {
-    margin-left: 180px;
+    margin-left: 181px;
 }
 
 #prizes li {
@@ -336,7 +333,7 @@ button span {
 }
 
 #be-a-contestant h2:after {
-    margin-left: 420px;
+    margin-left: 421px;
     background-position: 20px 50%;
 }
 
@@ -408,6 +405,12 @@ button {
     width: 63.15789473684211%;
     padding: 2.115384615384615em 0 2.846153846153846em;
     font-size: 1.625em;
+
+    -moz-transition: padding .2s ease-out;
+    -webkit-transition: padding .2s ease-out;
+    -o-transition: padding .2s ease-out;
+    -ms-transition: padding .2s ease-out;
+    transition: padding .2s ease-out;
 }
 
 button:active {
@@ -479,11 +482,6 @@ footer a:hover {
     h1 {
         font-size: 2.25em;
     }
-
-    nav a {
-        font-size: 1em;
-        padding: 0 1em;
-    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -511,6 +509,11 @@ footer a:hover {
 
     #obstacles .selected a {
         color: #f46034;
+    }
+
+    #obstacles .selected a:hover {
+        background-color: transparent;
+        box-shadow: none;
     }
 
     #pick_it:before {
@@ -607,6 +610,7 @@ footer a:hover {
 }
 
 @media only screen and (min-width: 1024px) {
+    /* move select boxes on the same line */
     .select {
         float: left;
     }
@@ -630,14 +634,24 @@ footer a:hover {
 }
 
 @media only screen and (min-width: 1280px) {
+    nav a {
+        font-size: 1.125em;
+        line-height: 1.777777777777778em;
+        padding: 0 1.472222222222222em;
+    }
+
     .content {
         width: 68.01736613603473%;
+    }
+
+    header .content {
+        width: auto;
     }
 }
 
 @media only screen and (min-width: 1401px) {
     .content {
-        max-width: 78.75em; /* 1260 */
+        max-width: 78.75em; /* 1260 (elastic) */
     }
 
     #obstacles ul {
