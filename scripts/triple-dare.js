@@ -52,7 +52,7 @@
     // original: https://github.com/davatron5000/FitText.js/blob/master/jquery.fittext.js
     $.fitText = function fitText(elements, compressor, options) {
         var minFontSize = (options && options.minFontSize) || Number.NEGATIVE_INFINITY,
-            maxFontSize = (options && options.minFontSize) || Number.POSITIVE_INFINITY;
+            maxFontSize = (options && options.maxFontSize) || Number.POSITIVE_INFINITY;
 
         compressor = compressor || 1;
 
@@ -68,15 +68,19 @@
 
         resizer();
 
-        if (!fitText.handlers) {
-            fitText.handlers = [];
-        }
-
-        fitText.handlers.push(resizer);
+        addOnResizeHandler(resizer);
     };
 
+    function addOnResizeHandler(handler) {
+        if (!$.onResizeHandlers) {
+            $.onResizeHandlers = [];
+        }
+
+        $.onResizeHandlers.push(handler);
+    }
+
     window.onresize = function() {
-        var handlers = $.fitText.handlers;
+        var handlers = $.onResizeHandlers;
         if (handlers) {
             for (var i = 0, len = handlers.length; i < len; i++) {
                 handlers[i]();
@@ -142,9 +146,8 @@
         },
         initClock: function() {
             // init clock only for bigger screens
-            var column = $.create('div.column'),
+            var column = $.create('div#clock-column.column'),
                 clock = $.create("div#clock");
-                console.log(column, clock);
 
             clock.appendChild(doc.createTextNode("60"));
             clock.appendChild($.create("span.remaining"));
@@ -186,12 +189,10 @@
             }
 
             $.each($.get("select"), function() {
-                var wrap = $.create("div.select");
-                this.parentNode.insertBefore(wrap, this);
+                var wrap = $.create("div#" + this.id + "-wrap.select"),
+                    that = this;
 
-                wrap.style.width = this.offsetWidth + "px";
-                wrap.style.height = this.offsetHeight + "px";
-                wrap.style.marginRight = $.getStyle(this, "marginRight");
+                this.parentNode.insertBefore(wrap, this);
 
                 wrap.appendChild(this);
                 wrap.appendChild(doc.createTextNode(this.value));
@@ -213,8 +214,8 @@
             }
         },
         initFitText: function() {
-            //$.fitText($.get("h1"), 1.807692307692308);
-            //$.fitText($.get(".airing"), 4.272727272727273);
+            $.fitText($.get("h1"), 1.4, { maxFontSize: 52 });
+            $.fitText($.get("h2"), 1, { maxFontSize: 40 });
         }
     };
 
