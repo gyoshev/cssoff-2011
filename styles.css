@@ -250,14 +250,6 @@ input, select, .select {
     display: none;
 }
 
-#obstacles .selected {
-    background: #eef13f url('images/texture-yellow.jpg');
-}
-
-#obstacles .selected a {
-    color: #f46034;
-}
-
 #obstacles div.column {
     display: none;
 }
@@ -465,17 +457,22 @@ footer a:hover {
 }
 
 @media only screen and (min-width: 768px) {
-}
-
-@media only screen and (min-width: 1024px) {
     .content {
-        width: 68.01736613603473%;
+        width: 80%;
     }
 
     .column {
         width: 50%;
         text-align: center;
         float: left;
+    }
+
+    #obstacles .selected {
+        background: #eef13f url('images/texture-yellow.jpg');
+    }
+
+    #obstacles .selected a {
+        color: #f46034;
     }
 
     #pick_it:before {
@@ -546,6 +543,7 @@ footer a:hover {
         *display: inline;
         zoom: 1;
         width: 31.7%;
+        vertical-align: top;
         margin-bottom: 0;
     }
 
@@ -558,6 +556,12 @@ footer a:hover {
         text-align: left;
         padding-left: 0.7857142857142857em;
         padding-bottom: 27px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .content {
+        width: 68.01736613603473%;
     }
 }
 

@@ -1,4 +1,5 @@
 (function($) {
+    var doc = document;
     $.closest = function(element, selector) {
         return $.is(element, selector) ? element : $.ancestor(element,selector);
     };
@@ -38,7 +39,7 @@
     };
 
     $.getStyle = function(element, property) {
-        var view = document.defaultView;
+        var view = doc.defaultView;
 
         if (element.currentStyle) {
             return element.currentStyle[property];
@@ -140,7 +141,20 @@
             });
         },
         initClock: function() {
-            var clock = $.get("#clock")[0];
+            // init clock only for bigger screens
+            var column = $.create('div.column'),
+                clock = $.create("div#clock");
+                console.log(column, clock);
+
+            clock.appendChild(doc.createTextNode("60"));
+            clock.appendChild($.create("span.remaining"));
+            clock.lastChild.appendChild(doc.createTextNode(" seconds remaining"));
+            column.appendChild(clock);
+
+            column.appendChild($.create("div#call-to-action"));
+            column.lastChild.appendChild(doc.createTextNode("The clock is ticking!"));
+
+            $.get("#be-a-contestant .content")[0].appendChild(column);
 
             function pad(i) {
                 return i < 10 ? "0" + i : i;
@@ -168,7 +182,7 @@
                     wrap = select.parentNode;
 
                 wrap.removeChild(select.nextSibling);
-                wrap.insertBefore(document.createTextNode(select.value), wrap.lastChild);
+                wrap.insertBefore(doc.createTextNode(select.value), wrap.lastChild);
             }
 
             $.each($.get("select"), function() {
@@ -180,7 +194,7 @@
                 wrap.style.marginRight = $.getStyle(this, "marginRight");
 
                 wrap.appendChild(this);
-                wrap.appendChild(document.createTextNode(this.value));
+                wrap.appendChild(doc.createTextNode(this.value));
                 wrap.appendChild($.create("span.arrow"));
 
                 this.onchange = onChangeHandler;
@@ -193,8 +207,8 @@
                     e.preventDefault();
                     var hash = e.target.getAttribute("href", 2);
                     history.pushState({}, window.title, hash);
-                    $.animate(document.body, "scrollTop", $.get(hash)[0].offsetTop, 500);
-                    $.animate(document.documentElement, "scrollTop", $.get(hash)[0].offsetTop, 500);
+                    $.animate(doc.body, "scrollTop", $.get(hash)[0].offsetTop, 500);
+                    $.animate(doc.documentElement, "scrollTop", $.get(hash)[0].offsetTop, 500);
                 });
             }
         },

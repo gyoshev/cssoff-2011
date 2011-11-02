@@ -75,6 +75,7 @@ footer .left-column, footer .right-column {
     display: inline-block;
     *display: inline;
     zoom: 1;
+    vertical-align: top;
     width: 31.7%;
     margin-bottom: 0;
 }
