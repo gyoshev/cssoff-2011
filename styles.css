@@ -371,6 +371,12 @@ input, select, .select {
     color: #fff;
     margin-bottom: 0.9375em;
     -webkit-appearance: none;
+
+    -moz-transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    transition: all .2s ease-out;
 }
 
 input {
@@ -380,17 +386,8 @@ input {
 ::-webkit-input-placeholder { color: #fff; }
 :-moz-placeholder { color: #fff; }
 
-input:focus {
-	color: #c23f17;
-	background: #fff;
-}
-
-input:hover {
-	background: #ff9752;
-}
-
-input:focus:hover {
-	background: #fff;
+input:hover, .select:hover, input:focus {
+    background: #ff9752;
 }
 
 .select {
