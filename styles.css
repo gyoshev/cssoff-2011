@@ -87,9 +87,9 @@ h1 {
     margin-top: 0.3461538461538462em;
 
     /* text shadow in IE */
-    background-color: #ff1ff1\9;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Chroma(Color=#ff1ff1) progid:DXImageTransform.Microsoft.DropShadow(Color=#ffffff, OffX=3, OffY=3)";
-    filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=3, OffY=3, Color=#ffffff);
+    background-color: #fe6538\9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Chroma(Color=#fe6538) progid:DXImageTransform.Microsoft.DropShadow(Color=#ffffff, OffX=3, OffY=3)";
+    filter: progid:DXImageTransform.Microsoft.Chroma(Color=#fe6538) progid:DXImageTransform.Microsoft.DropShadow(OffX=3, OffY=3, Color=#ffffff);
 }
 
 * html h1 { background-color: transparent; }
@@ -411,6 +411,7 @@ button {
     width: 63.15789473684211%;
     padding: 2.115384615384615em 0 2.846153846153846em;
     font-size: 1.625em;
+    cursor: pointer;
 
     -moz-transition: padding .2s ease-out;
     -webkit-transition: padding .2s ease-out;

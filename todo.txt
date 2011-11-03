@@ -2,6 +2,8 @@ X responsive implementation
 X optimize obstacle images (400x460 jpeg 60% with orange texture background)
 - smush images
 - export new header splash
+- text-shadow and compact labels in ie9 ?
+- make the site openable in ie8
 - legacy browser compatibility (ie6/7)
 - show obstacles on mobile
 - pimp up interactions
