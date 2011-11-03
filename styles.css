@@ -380,6 +380,18 @@ input {
 ::-webkit-input-placeholder { color: #fff; }
 :-moz-placeholder { color: #fff; }
 
+input:focus {
+	color: #c23f17;
+	background: #fff;
+}
+
+input:hover {
+	background: #ff9752;
+}
+
+input:focus:hover {
+	background: #fff;
+}
 
 .select {
     line-height: 50px;
