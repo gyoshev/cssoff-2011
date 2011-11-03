@@ -35,7 +35,7 @@
 
 /* reset */
 
-header, section, nav, footer {
+header, section, aside, hgroup, nav, footer {
     display: block;
 }
 
@@ -273,7 +273,7 @@ input, select, .select {
     display: none;
 }
 
-#obstacles div.column {
+#obstacles aside {
     display: none;
 }
 
@@ -290,14 +290,22 @@ button span {
     -o-transform: rotate(-7.5deg);
 }
 
-#obstacles h3 {
-    font-size: 40px;
-    padding-top: 14.8936170212766%;
+#obstacles hgroup {
+    height: 206px;
+    display: table;
+    width: 100%;
+    margin-bottom: 42px;
+}
+
+#obstacles hgroup div {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
 #obstacles h4 {
-    padding: 14px 0 100px;
-    font-size: 21.18px;
+    font-size: 1.32375em;
+    padding-top: 0.6363636363636364em;
 }
 
 #obstacles img {
@@ -335,10 +343,6 @@ button span {
 #be-a-contestant h2:after {
     margin-left: 421px;
     background-position: 20px 50%;
-}
-
-#be-a-contestant div.column {
-    text-align: center;
 }
 
 fieldset {
@@ -384,6 +388,7 @@ input {
     left: 0;
     right: 0;
     z-index: 2;
+    width: 100%;
 }
 
 .select .arrow {
@@ -400,6 +405,7 @@ button {
     margin: 7.722772277227723% 0 0 12.27722772277228%;
     letter-spacing: 1px;
     border: 0;
+    position: relative;
     background: transparent url('images/button-splash.jpg') no-repeat 50% 50%;
     background-size: contain;
     width: 63.15789473684211%;
@@ -415,6 +421,12 @@ button {
 
 button:active {
     padding: 2.315384615384615em 0 2.646153846153846em;
+}
+
+button span {
+    position: absolute;
+    left: -55px;
+    right: -55px;
 }
 
 #clock-column {
@@ -538,7 +550,7 @@ footer a:hover {
         -webkit-transform: translate(0,20px);
     }
 
-    #obstacles div.column {
+    #obstacles aside {
         display: block;
         background: transparent url('images/obstacles-splash.jpg') no-repeat 50% 0;
     }
@@ -665,10 +677,10 @@ footer a:hover {
     }
 
     #obstacles h2:after {
-        margin-right: 38.1%; /* roughly div.column width + li margin */
+        margin-right: 38.1%; /* roughly aside.column width + li margin */
     }
 
-    #obstacles div.column {
+    #obstacles aside {
         width: 36.50793650793651%;
         margin-top: -9em;
     }

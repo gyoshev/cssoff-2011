@@ -1,16 +1,17 @@
-- responsive implementation
-  - flexible grid
-  - flexible images
-  - media queries
+X responsive implementation
 X optimize obstacle images (400x460 jpeg 60% with orange texture background)
+- smush images
+- export new header splash
+- legacy browser compatibility (ie6/7)
+- show obstacles on mobile
 - pimp up interactions
-    - obstacle hover states
+    X obstacle hover states
     X animate navigation to sections
+    - inputs hover states
     - animate clock
     - animate obstacle transitions
     - compact labels
 X favicon
 X fix fonts in chrome
 X consider changing text to normally capitalized
-- legacy browser compatibility (ie6/7)
 - move small images to sprite

@@ -132,7 +132,7 @@
 
                 $.addClass(container.parentNode, "selected");
 
-                var info = $.get("#obstacles div.column")[0];
+                var info = $.get("#obstacles aside.column")[0];
 
                 // change image
                 descendants(info, "img")[0].src = img[0].src.replace(/\.png$/i, ".jpg");
@@ -146,7 +146,7 @@
         },
         initClock: function() {
             // init clock only for bigger screens
-            var column = $.create('div#clock-column.column'),
+            var column = $.create('aside#clock-column.column'),
                 clock = $.create("div#clock");
 
             clock.appendChild(doc.createTextNode("60"));
