@@ -116,7 +116,13 @@
     var TripleDare = {
         initObstacles: function() {
             // obstacles
-            var obstacles = $.get("#obstacles a");
+            var obstacles = $.get("#obstacles a"),
+                shown = false,
+                info = $.get("#obstacles .column")[1];
+
+            $.onclick([info], function(e) {
+                info.style.display = "";
+            });
 
             $.onclick(obstacles, function(e) {
                 e.preventDefault();
@@ -132,7 +138,10 @@
 
                 $.addClass(container.parentNode, "selected");
 
-                var info = $.get("#obstacles .column")[1];
+                if ($.getStyle(info, "display") == "none") {
+                    info.style.display = "block";
+                    shown = true;
+                }
 
                 // change image
                 descendants(info, "img")[0].src = img[0].src.replace(/\.png$/i, ".jpg");

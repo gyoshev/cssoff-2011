@@ -1,8 +1,9 @@
 X responsive implementation
 X optimize obstacle images (400x460 jpeg 60% with orange texture background)
-- smush images
 - export new header splash
-- text-shadow and compact labels in ie9 ?
+- smush images
+- compact labels
+- text-shadow in ie9 ?
 X make the site openable in ie8
 - legacy browser compatibility (ie6/7)
 - show obstacles on mobile
@@ -12,7 +13,6 @@ X make the site openable in ie8
     - inputs hover states
     - animate clock
     - animate obstacle transitions
-    - compact labels
 X favicon
 X fix fonts in chrome
 X consider changing text to normally capitalized

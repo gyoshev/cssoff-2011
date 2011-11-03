@@ -86,10 +86,8 @@ h1 {
     padding-bottom: 0.1730769230769231em;
     margin-top: 0.3461538461538462em;
 
-    /* text shadow in IE */
-    background-color: #fe6538\9;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Chroma(Color=#fe6538) progid:DXImageTransform.Microsoft.DropShadow(Color=#ffffff, OffX=3, OffY=3)";
-    filter: progid:DXImageTransform.Microsoft.Chroma(Color=#fe6538) progid:DXImageTransform.Microsoft.DropShadow(OffX=3, OffY=3, Color=#ffffff);
+    -ms-filter: "progid:DXImageTransform.Microsoft.DropShadow(Color=#ffffff, OffX=3, OffY=3)";
+    filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=3, OffY=3, Color=#ffffff);
 }
 
 * html h1 { background-color: transparent; }
@@ -249,7 +247,7 @@ input, select, .select {
 }
 
 #obstacles a, #obstacles li {
-   -moz-border-radius: 6px;
+    -moz-border-radius: 6px;
     border-radius: 6px;
 }
 
@@ -273,6 +271,16 @@ input, select, .select {
 
 #obstacles aside {
     display: none;
+    text-align: center;
+    position: absolute;
+    top: 14%;
+    border: 3px solid #e64514;
+    width: 98%;
+    left: 50%;
+    margin-left: -49%;
+    box-shadow: 0 0 .2em #7fb325;
+    background: #fe6638 url('images/texture-orange.jpg');
+    border-radius: 4px;
 }
 
 #obstacles h3,
@@ -324,9 +332,6 @@ button span {
 }
 
 #prizes li {
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
     margin: 0;
     margin-bottom: 3.5em;
     vertical-align: top;
@@ -468,9 +473,6 @@ h3 {
 }
 
 footer .left-column, footer .right-column {
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
     line-height: 1.125em;
     margin-bottom: 1em;
 }
@@ -557,6 +559,13 @@ footer a:hover {
 
     #obstacles aside {
         display: block;
+        position: static;
+        top: 0;
+        left: 0;
+        border: 0;
+        width: 50%;
+        margin-left: 0;
+        box-shadow: none;
         background: transparent url('images/obstacles-splash.jpg') no-repeat 50% 0;
     }
 
@@ -564,6 +573,9 @@ footer a:hover {
         margin-bottom: 0;
         width: 44.68085106382979%;
         padding: 0 2.659574468085106%;
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
     }
 
     #prizes .last-row {
@@ -604,6 +616,9 @@ footer a:hover {
         width: 31.7%;
         vertical-align: top;
         margin-bottom: 0;
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
     }
 
     .left-column {
