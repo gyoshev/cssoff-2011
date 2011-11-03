@@ -132,7 +132,7 @@
 
                 $.addClass(container.parentNode, "selected");
 
-                var info = $.get("#obstacles aside.column")[0];
+                var info = $.get("#obstacles .column")[1];
 
                 // change image
                 descendants(info, "img")[0].src = img[0].src.replace(/\.png$/i, ".jpg");
@@ -180,12 +180,19 @@
             }, 1000);
         },
         initSelectBoxes: function() {
+            function getValue(select) {
+                return select.options[select.selectedIndex].value;
+            }
+
             function onChangeHandler(e) {
+                if (!e) e = window.event;
+
                 var select = e.target || e.srcElement,
                     wrap = select.parentNode;
 
                 wrap.removeChild(select.nextSibling);
-                wrap.insertBefore(doc.createTextNode(select.value), wrap.lastChild);
+                var value = getValue(select);;
+                wrap.insertBefore(doc.createTextNode(value), wrap.lastChild);
             }
 
             $.each($.get("select"), function() {
@@ -195,7 +202,7 @@
                 this.parentNode.insertBefore(wrap, this);
 
                 wrap.appendChild(this);
-                wrap.appendChild(doc.createTextNode(this.value));
+                wrap.appendChild(doc.createTextNode(getValue(this)));
                 wrap.appendChild($.create("span.arrow"));
 
                 this.onchange = onChangeHandler;

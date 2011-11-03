@@ -141,9 +141,7 @@ section:after {
     display: block;
     height: 7px;
     width: 100%;
-    background: #000;
-    opacity: .08;
-    filter: alpha(opacity=8);
+    background: rgba(0,0,0,.08);
     position: absolute;
 }
 
@@ -326,6 +324,9 @@ button span {
 }
 
 #prizes li {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
     margin: 0;
     margin-bottom: 3.5em;
     vertical-align: top;
@@ -467,6 +468,9 @@ h3 {
 }
 
 footer .left-column, footer .right-column {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
     line-height: 1.125em;
     margin-bottom: 1em;
 }
@@ -557,9 +561,6 @@ footer a:hover {
     }
 
     #prizes li {
-        display: inline-block;
-        *display: inline;
-        zoom: 1;
         margin-bottom: 0;
         width: 44.68085106382979%;
         padding: 0 2.659574468085106%;
@@ -586,9 +587,7 @@ footer a:hover {
         height: 330px;
         color: #f5eb00;
         overflow: hidden;
-        display: inline-block;
-        *display: inline;
-        zoom: 1;
+        margin: 0 auto;
         font-size: 140px;
         line-height: 330px;
         font-family: 'DigitaldreamFatRegular', Courier, monospace;
@@ -602,9 +601,6 @@ footer a:hover {
     }
 
     footer .left-column, footer .right-column {
-        display: inline-block;
-        *display: inline;
-        zoom: 1;
         width: 31.7%;
         vertical-align: top;
         margin-bottom: 0;
